@@ -7,6 +7,17 @@ namespace PlanYourHeist {
         static void Main (string [] args) {
             Team myTeam = new Team ();
 
+            Console.WriteLine ("So you want to rob a bank and get rich do you...");
+            Console.WriteLine ("Well how rich do you want to be?");
+            Console.WriteLine (" 1) Poor");
+            Console.WriteLine (" 2) Middle class");
+            Console.WriteLine (" 3) Boogey");
+            Console.WriteLine (" 4) Starbucks every day type");
+            Console.WriteLine ();
+            Console.Write ("> ");
+            string bank = Console.ReadLine ();
+            int bankLevel = Int32.Parse (bank) * 10;
+
             while (true) {
                 Console.WriteLine ("Menu");
                 Console.WriteLine (" 1) Add a Team Member");
@@ -15,7 +26,6 @@ namespace PlanYourHeist {
                 Console.WriteLine (" 4) Exit");
                 Console.WriteLine ();
                 Console.Write ("> ");
-
                 string userChoice = Console.ReadLine ();
 
                 switch (userChoice) {
@@ -49,7 +59,7 @@ namespace PlanYourHeist {
                         int RunScenario = Int32.Parse (numScenarioRuns);
                         for (int i = 0; i < RunScenario; i++) {
                             int luckValue = new Random ().Next (-10, 11);
-                            int difficultyLevel = 100 + luckValue;
+                            int difficultyLevel = bankLevel + luckValue;
                             // Console.WriteLine ("bang!");
                             //if skillLevelSum is greater than difficulty level will be successful, otherwise will fail;
                             int skillLevelSum = myTeam.SumSkillLevel ();
