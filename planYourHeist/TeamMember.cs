@@ -15,10 +15,13 @@ namespace PlanYourHeist {
 
         // created a method to print team members info
         public void print () {
-            Console.WriteLine (Name);
-            Console.WriteLine (SkillLevel);
-            Console.WriteLine (CourageFactor);
+            Console.WriteLine ();
+            Console.WriteLine ($"Name: {Name}");
+            Console.WriteLine ($"Skill Level: {SkillLevel}");
+            Console.WriteLine ($"Courage Level: {CourageFactor}");
+            Console.WriteLine ();
         }
+
     }
 
 }
