@@ -23,7 +23,8 @@ namespace PlanYourHeist {
                 Console.WriteLine (" 1) Add a Team Member");
                 Console.WriteLine (" 2) Print out Team Members");
                 Console.WriteLine (" 3) Run Scenario");
-                Console.WriteLine (" 4) Exit");
+                Console.WriteLine (" 4) Success and failure report");
+                Console.WriteLine (" 5) Exit");
                 Console.WriteLine ();
                 Console.Write ("> ");
                 string userChoice = Console.ReadLine ();
@@ -67,13 +68,19 @@ namespace PlanYourHeist {
                             Console.WriteLine ($"Bank's difficulty Level: {difficultyLevel}");
                             if (skillLevelSum >= difficultyLevel) {
                                 Console.WriteLine ("You will succeed in your heist!");
+                                myTeam.SuccessfulHeists++;
                             }
                             else {
                                 Console.WriteLine ("Sorry, you will fail");
+                                myTeam.unSuccessfulHeists++;
                             }
                         }
                         break;
                     case "4":
+                        Console.WriteLine (myTeam.SuccessfulHeists);
+                        Console.WriteLine (myTeam.unSuccessfulHeists);
+                        break;
+                    case "5":
                         return;
                     default:
                         // if the "choice" variable didn't match any "case" we inform the user that they

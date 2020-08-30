@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace PlanYourHeist {
     public class Team {
+        public int SuccessfulHeists { get; set; }
+        public int unSuccessfulHeists { get; set; }
         public string name { get; set; }
         public List<TeamMember> Group = new List<TeamMember> ();
 
